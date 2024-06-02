@@ -1,3 +1,29 @@
 body {
+    background-color: black;
+    color: white;
     font-family: "Iosevka Web";
+}
+
+h1 {
+    font-size: 40px;
+    font: 200;
+}
+
+p {
+    font-size: 24px;
+    font: 100;
+}
+
+hr {
+    border-top: 3px solid rgba(102, 255, 255, 1);
+}
+
+.form-control {
+    background-color: #101010;
+    color: #ffffff;
+}
+
+.form-control:focus {
+    background-color: rgba(102, 255, 255, 0.25);
+    color: #ffffff
 }

@@ -1,7 +1,7 @@
-const resultElement = document.querySelector("body > div > p:nth-child(4) > textarea");
-const inputElement = document.querySelector("body > div > p:nth-child(2) > input");
-const copyButton = document.querySelector("body > div > p:nth-child(3) > input:nth-child(1)")
-const clearAllButton = document.querySelector("body > div > p:nth-child(3) > input:nth-child(2)")
+const inputElement = document.querySelector("#formFile");
+const resultElement = document.querySelector("body > div > p:nth-child(4) > textarea")
+const copyButton = document.querySelector("body > div > p:nth-child(5) > input.btn.btn-primary")
+const clearAllButton = document.querySelector("body > div > p:nth-child(5) > input.btn.btn-secondary")
 
 document.addEventListener('DOMContentLoaded', function () {
   inputElement.addEventListener('change', function () {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       reader.onloadend = function () {
         const base64String = reader.result.replace(/^data:.+;base64,/, '');
-        const formattedString = `BEGINNING_OF_TROMI_REPLAY|${file.name}|${base64String}|END_OF_TROMI_REPLAY`;
+        const formattedString = `BEGIN_OF_TROMI_REPLAY|${file.name}|${base64String}|END_OF_TROMI_REPLAY`;
         resultElement.readOnly = false
         resultElement.value = formattedString; // Writing the result to the 'replay_result' text field
         resultElement.readOnly = true
@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
   copyButton.addEventListener('click', function () {
     resultElement.select(); // Select the content of the replay_result field
     document.execCommand('copy'); // Copy the selected text
-    alert('Content copied!'); // Alert the user that the content has been copied
     return true;
   });
 });

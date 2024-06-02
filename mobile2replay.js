@@ -1,5 +1,5 @@
-const inputElement = document.querySelector("body > div > p:nth-child(2) > textarea")
-const downloadButton = document.querySelector("body > div > p:nth-child(3) > input.btn.btn-primary");
+const inputElement = document.querySelector("body > div > p:nth-child(3) > textarea")
+const downloadButton = document.querySelector("body > div > p:nth-child(4) > input.btn.btn-primary");
 
 // Helper function to convert Base64 string to a Blob
 //By https://codedump.io/share/Fd3DmsM6UAeS/1/creating-a-blob-from-a-base64-string-in-javascript
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const replayData = inputElement.value;
     const dataParts = replayData.split('|');
 
-    if(dataParts.length === 4 && dataParts[0] === 'BEGINNING_OF_TROMI_REPLAY' && dataParts[3] === 'END_OF_TROMI_REPLAY') {
+    if(dataParts.length === 4 && dataParts[0] === 'BEGIN_OF_TROMI_REPLAY' && dataParts[3] === 'END_OF_TROMI_REPLAY') {
       const fileName = dataParts[1];
       const base64Content = dataParts[2];
       // Convert the Base64 string back to a Blob
