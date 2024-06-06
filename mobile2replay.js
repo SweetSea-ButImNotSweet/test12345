@@ -1,11 +1,10 @@
 const inputElement = document.querySelector("body > div > p:nth-child(3) > textarea")
 const downloadButton = document.querySelector("body > div > p:nth-child(4) > input.btn.btn-primary");
 
-// Helper function to convert Base64 string to a Blob
-//By https://codedump.io/share/Fd3DmsM6UAeS/1/creating-a-blob-from-a-base64-string-in-javascript
-//Example
-//var blob = b64toBlob(b64Data, contentType);
-//var blobUrl = URL.createObjectURL(blob);
+// By https://codedump.io/share/Fd3DmsM6UAeS/1/creating-a-blob-from-a-base64-string-in-javascript
+// Example
+// var blob = b64toBlob(b64Data, contentType);
+// var blobUrl = URL.createObjectURL(blob);
 function b64toBlob(b64Data, contentType, sliceSize) {
   contentType = contentType || 'image/png';
   sliceSize = sliceSize || 512;
